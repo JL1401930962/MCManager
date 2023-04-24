@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mcmanager.mapper.PostMapper">
+    <resultMap id="BaseResultMap" type="com.example.mcmanager.entity.Post">
+        <id column="post_id" property="post_id" jdbcType="INTEGER"/>
+        <result column="userid" property="userid" jdbcType="INTEGER"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="head" property="head" jdbcType="LONGVARCHAR"/>
+        <result column="post_time" property="post_time" jdbcType="TIMESTAMP"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="picture" property="picture" jdbcType="LONGVARCHAR"/>
+        <result column="songid" property="songid" jdbcType="INTEGER"/>
+        <result column="comment_num" property="comment_num" jdbcType="INTEGER"/>
+        <result column="like_num" property="like_num" jdbcType="INTEGER"/>
+
+    </resultMap>
+    <sql id="Base_Column_List">
+        post_id, userid, username, head, post_time, content, picture, songid, comment_num, like_num
+    </sql>
+<!--    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from comment-->
+<!--        where comment_id = #{id,jdbcType=INTEGER}-->
+<!--    </select>-->
+<!--    <select id="selectByPostId" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from comment-->
+<!--        where post_id = #{post_id,jdbcType=INTEGER}-->
+<!--    </select>-->
+<!--    <select id="selectByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from comment-->
+<!--        where userid = #{userid,jdbcType=INTEGER}-->
+<!--    </select>-->
+<!--    <insert id="insert" parameterType="com.example.mcmanager.domain.Comment">-->
+<!--        insert into comment (comment_id, post_id, userid, username, content, date, picture)-->
+<!--        values (#{comment_id,jdbcType=INTEGER}, #{post_id,jdbcType=VARCHAR}, #{userid,jdbcType=TIMESTAMP}, #{username,jdbcType=INTEGER}, #{content,jdbcType=INTEGER}, #{picture,jdbcType=INTEGER})-->
+<!--    </insert>-->
+
+</mapper>

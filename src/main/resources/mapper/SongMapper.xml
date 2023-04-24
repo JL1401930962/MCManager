@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mcmanager.mapper.SongMapper">
+    <resultMap id="BaseResultMap" type="com.example.mcmanager.entity.Song">
+        <id column="songid" property="songid" jdbcType="INTEGER"/>
+        <result column="songurl" property="songurl" jdbcType="VARCHAR"/>
+        <result column="songname" property="songname" jdbcType="VARCHAR"/>
+        <result column="albumid" property="albumid" jdbcType="INTEGER"/>
+        <result column="albumname" property="albumname" jdbcType="VARCHAR"/>
+        <result column="artistid" property="artistid" jdbcType="INTEGER"/>
+        <result column="artistname" property="artistname" jdbcType="VARCHAR"/>
+        <result column="icon" property="icon" jdbcType="VARCHAR"/>
+        <result column="size" property="size" jdbcType="INTEGER"/>
+
+    </resultMap>
+    <sql id="Base_Column_List">
+        songid, songurl, songname, albumid, albumname, artistid, artistname, icon, size
+    </sql>
+
+</mapper>
