@@ -17,4 +17,12 @@
         userid, username, password, signature, head, sex, age
     </sql>
 
+    <select id="getAllUser" resultType="com.example.mcmanager.entity.User">
+        select * from user
+    </select>
+
+    <select id="getUserById" resultType="com.example.mcmanager.entity.User">
+        select * from user where userid=#{userid}
+    </select>
+
 </mapper>

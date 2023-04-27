@@ -7,6 +7,7 @@ import com.example.mcmanager.entity.Comment;
 import com.example.mcmanager.entity.Post;
 import com.example.mcmanager.service.*;
 import org.apache.commons.lang.StringUtils;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -176,6 +177,18 @@ public class PostController {
         String filePath = fileRelativePath.replace("*","")+fileName;
 
         return filePath;
+    }
+
+    //查询所有帖子信息
+    @GetMapping("/getAllPost")
+    public List<Post> getAllPost(){
+        return postService.getAllPost();
+    }
+
+    //根据userid查询所有帖子信息
+    @GetMapping("getAllPostById")
+    public List<Post> getAllPostById(@Param("userid") Integer userid){
+        return postService.getAllPostById(userid);
     }
 
 }

@@ -3,12 +3,10 @@ package com.example.mcmanager.controller;
 import com.example.mcmanager.entity.Post;
 import com.example.mcmanager.entity.User;
 import com.example.mcmanager.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +34,16 @@ public class UserController {
         return userService.list();
     }
 
+    //查询所有用户
+    @GetMapping("/getAllUser")
+    public List<User> getAllUser(){
+        return userService.getAllUser();
+    }
 
+    //根据id查询用户
+    @GetMapping("/getUserById")
+    public User getUserById(@Param("userid") Integer userid){
+        return userService.getUserById(userid);
+    }
 
 }

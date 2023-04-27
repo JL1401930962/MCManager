@@ -42,4 +42,13 @@
 <!--        values (#{comment_id,jdbcType=INTEGER}, #{post_id,jdbcType=VARCHAR}, #{userid,jdbcType=TIMESTAMP}, #{username,jdbcType=INTEGER}, #{content,jdbcType=INTEGER}, #{picture,jdbcType=INTEGER})-->
 <!--    </insert>-->
 
+    <select id="getAllPost" resultType="com.example.mcmanager.entity.Post">
+        select * from post
+    </select>
+
+    <select id="getAllPostById" resultType="com.example.mcmanager.entity.Post">
+        select * from post where userid=#{userid}
+    </select>
+
+
 </mapper>
