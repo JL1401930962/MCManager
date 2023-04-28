@@ -49,15 +49,6 @@ public class PostController {
     private String fileRelativePath;
 
     /**
-     * 接口：获取信息
-     * @return
-     */
-    @PostMapping("list1")
-    public List<Post> list(){
-        return postService.list();
-    }
-
-    /**
      * 后台管理接口：获取后台管理的帖子列表、可以分页、可以根据关键词搜索
      * @param pageIndex
      * @param pageSize
@@ -134,7 +125,6 @@ public class PostController {
      * @param map
      * @return
      */
-
     @PostMapping("comment")
     public List<Comment> comment(@RequestBody Map<String,String> map){
         String userId = "5";
@@ -145,17 +135,6 @@ public class PostController {
         List<Comment> list = commentService.list(cqw);
         System.out.println("=========================================="+list);
         return list;
-    }
-
-    /**
-     * 小程序接口：删除评论
-     */
-    @PostMapping("deleteComment")
-    public String deleteComment(@RequestBody Map<String,String> map){
-        //todo
-        String userId = "5";
-        commentService.removeById(map.get("comment_id"));
-        return "success";
     }
 
     /**
@@ -191,4 +170,25 @@ public class PostController {
         return postService.getAllPostById(userid);
     }
 
+    // 添加帖子
+    @PostMapping("/addPost")
+    public String addPost(@RequestBody Map<String,String> map){
+        Post post = new Post();
+        post.setUserid(String.valueOf(Integer.parseInt(map.get("userid"))));
+        post.setUsername(map.get("username"));
+        post.setHead(map.get("head"));
+        post.setContent(map.get("content"));
+        if (map.get("picture") == null){
+            post.setPicture("");
+        }else {
+            post.setPicture(map.get("picture"));
+        }
+        if (map.get("songid") != null){
+            post.setSongid(Integer.parseInt(map.get("songid")));
+        }
+
+        postService.addPost(post);
+        postService.save(post);
+        return "success";
+    }
 }

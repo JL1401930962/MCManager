@@ -3,6 +3,15 @@ package com.example.mcmanager.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.mcmanager.entity.Comment;
 
-public interface CommentService extends IService<Comment> {
+import java.util.List;
 
+public interface CommentService extends IService<Comment> {
+    // 根据post_id查询所有评论信息
+     List<Comment> getCommentsByPostId(Integer post_id);
+
+    // 添加评论
+     int addComment(Comment comment);
+
+    // 删除评论
+     int deleteComment(Integer comment_id);
 }

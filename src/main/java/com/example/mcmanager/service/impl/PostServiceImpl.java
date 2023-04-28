@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
@@ -26,4 +27,11 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
     public List<Post> getAllPostById(Integer userid) {
         return postMapper.getAllPostById(userid);
     }
+
+    // 添加帖子
+    @Override
+    public String addPost(Post post) {
+        return postMapper.addPost(post);
+    }
+
 }

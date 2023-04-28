@@ -69,35 +69,35 @@ export const constantRoutes = [
         meta: { title: 'Table', icon: 'table' }
       },
       {
-        path: 'table',
+        path: 'post',
         name: 'Post',
         component: () => import('@/views/table/PostView'),
         meta: { title: 'Post表', icon: 'table' }
       },
       {
-        path: 'table',
+        path: 'comment',
         name: 'Comment',
         component: () => import('@/views/table/CommentView'),
         meta: { title: 'Comment表', icon: 'table' }
       },
       {
-        path: 'table',
+        path: 'song',
         name: 'Song',
         component: () => import('@/views/table/SongView'),
         meta: { title: 'Song表', icon: 'table' }
       },
       {
-        path: 'table',
+        path: 'usertable',
         name: 'User',
         component: () => import('@/views/table/UserView'),
         meta: { title: 'User表', icon: 'table' }
       },
       {
-        path: 'table',
+        path: 'likes',
         name: 'Likes',
         component: () => import('@/views/table/LikesView'),
         meta: { title: 'Likes表', icon: 'table' }
-      },
+      }
     ]
   },
 

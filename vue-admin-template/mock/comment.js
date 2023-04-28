@@ -8,7 +8,6 @@ const data = Mock.mock({
     username: 'name',
     date: '@date',
     content: '@sentence(10, 20)',
-    picture: '@image("200x100", "#50B347", "#FFF", "Mock.js")',
 
   }]
 })

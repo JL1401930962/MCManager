@@ -10,6 +10,7 @@ import com.example.mcmanager.service.CommentService;
 import com.example.mcmanager.service.PostService;
 import com.example.mcmanager.service.UserService;
 import org.apache.commons.lang.StringUtils;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,6 +78,42 @@ public class CommentController {
         map1.put("picture",comment.getPicture());
 
         return map1;
+    }
+
+    // 根据post_id获取评论列表
+    @GetMapping("getCommentList")
+    public List<Comment> getCommentsByPostId(@Param("userid") Integer userid){
+        return commentService.getCommentsByPostId(userid);
+    }
+
+    /**
+     * 后台管理接口：添加评论
+     * @param comment
+     * @return
+     */
+    @PostMapping("add")
+    public boolean addComment(@RequestBody Comment comment){
+        return commentService.save(comment);
+    }
+
+    /**
+     * 后台管理接口：更新评论
+     * @param comment
+     * @return
+     */
+    @PostMapping("update")
+    public boolean updateComment(@RequestBody Comment comment){
+        return commentService.updateById(comment);
+    }
+
+    /**
+     * 后台管理接口：删除评论
+     * @param comment_id
+     * @return
+     */
+    @PostMapping("delete")
+    public boolean deleteComment(String comment_id){
+        return commentService.removeById(comment_id);
     }
 
 }

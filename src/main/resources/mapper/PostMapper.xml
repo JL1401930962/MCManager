@@ -19,28 +19,7 @@
     <sql id="Base_Column_List">
         post_id, userid, username, head, post_time, content, picture, songid, comment_num, like_num
     </sql>
-<!--    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
-<!--        select-->
-<!--        <include refid="Base_Column_List"/>-->
-<!--        from comment-->
-<!--        where comment_id = #{id,jdbcType=INTEGER}-->
-<!--    </select>-->
-<!--    <select id="selectByPostId" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
-<!--        select-->
-<!--        <include refid="Base_Column_List"/>-->
-<!--        from comment-->
-<!--        where post_id = #{post_id,jdbcType=INTEGER}-->
-<!--    </select>-->
-<!--    <select id="selectByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
-<!--        select-->
-<!--        <include refid="Base_Column_List"/>-->
-<!--        from comment-->
-<!--        where userid = #{userid,jdbcType=INTEGER}-->
-<!--    </select>-->
-<!--    <insert id="insert" parameterType="com.example.mcmanager.domain.Comment">-->
-<!--        insert into comment (comment_id, post_id, userid, username, content, date, picture)-->
-<!--        values (#{comment_id,jdbcType=INTEGER}, #{post_id,jdbcType=VARCHAR}, #{userid,jdbcType=TIMESTAMP}, #{username,jdbcType=INTEGER}, #{content,jdbcType=INTEGER}, #{picture,jdbcType=INTEGER})-->
-<!--    </insert>-->
+
 
     <select id="getAllPost" resultType="com.example.mcmanager.entity.Post">
         select * from post
@@ -50,5 +29,31 @@
         select * from post where userid=#{userid}
     </select>
 
+    <insert id="addPost" parameterType="com.example.mcmanager.entity.Post">
+        insert into post
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userid != null">userid,</if>
+            <if test="username != null">username,</if>
+            <if test="head != null">head,</if>
+            <if test="post_time != null">post_time,</if>
+            <if test="content != null">content,</if>
+            <if test="picture != null">picture,</if>
+            <if test="songid != null">songid,</if>
+            <if test="comment_num != null">comment_num,</if>
+            <if test="like_num != null">like_num,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userid != null">#{userid},</if>
+            <if test="username != null">#{username},</if>
+            <if test="head != null">#{head},</if>
+            <if test="post_time != null">#{post_time},</if>
+            <if test="content != null">#{content},</if>
+            <if test="picture != null">#{picture},</if>
+            <if test="songid != null">#{songid},</if>
+            <if test="comment_num != null">#{comment_num},</if>
+            <if test="like_num != null">#{like_num},</if>
+        </trim>
+
+    </insert>
 
 </mapper>

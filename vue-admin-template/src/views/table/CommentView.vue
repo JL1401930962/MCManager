@@ -33,11 +33,6 @@
           {{ scope.row.content }}
         </template>
       </el-table-column>
-      <el-table-column label="图片">
-        <template slot-scope="scope">
-          {{ scope.row.pictrue }}
-        </template>
-      </el-table-column>
 
       <el-table-column align="center" prop="created_at" label="评论时间" width="120">
         <template slot-scope="scope">

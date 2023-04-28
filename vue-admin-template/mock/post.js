@@ -6,7 +6,7 @@ const data = Mock.mock({
     userid: '@id',
     username: 'name',
     content: '@sentence(10, 20)',
-    picture: '@image("200x100", "#50B347", "#FFF", "Mock.js")',
+    picture: 'data:image/.;base64',
     songid: '@id',
     like_num: '@integer(0, 5000)',
     comment_num: '@integer(0, 5000)',
@@ -17,7 +17,7 @@ const data = Mock.mock({
 
 module.exports = [
   {
-    url: 'http://localhost:5009/post/list',
+    url: 'http://localhost:5009/post/getAllPost',
     type: 'get',
     response: config => {
       const items = data.items

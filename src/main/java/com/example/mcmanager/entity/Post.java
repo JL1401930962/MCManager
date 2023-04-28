@@ -22,7 +22,6 @@ public class Post {
     private Integer songid;
     private Integer comment_num;
     private Integer like_num;
-    private Integer post_num;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -115,11 +114,4 @@ public class Post {
         this.like_num = like_num;
     }
 
-    public Integer getPost_num() {
-        return post_num;
-    }
-
-    public void setPost_num(Integer post_num) {
-        this.post_num = post_num;
-    }
 }

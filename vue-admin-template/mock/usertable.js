@@ -4,19 +4,19 @@ const Mock = require('mockjs')
 const data = Mock.mock({
   'items|30': [{
     userid: '@id',
-    username: 'name',
+    username: '@sentence(10, 20)',
     password: '@sentence(10, 20)',
     signature: '@sentence(10, 20)',
-    head: '@image("200x100", "#50B347", "#FFF", "Mock.js")',
-    sex: '@integer(0, 1)',
-    age: '@integer(0, 1)'
+    head: 'data:image/.;base64',
+    sex: '@integer(0, 2)',
+    age: '@integer(0, 2)'
 
   }]
 })
 
 module.exports = [
   {
-    url: '/vue-admin-template/user/list',
+    url: 'http://localhost:5009/user/getAllUser',
     type: 'get',
     response: config => {
       const items = data.items

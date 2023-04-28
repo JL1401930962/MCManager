@@ -35,7 +35,7 @@
       </el-table-column>
       <el-table-column label="头像">
         <template slot-scope="scope">
-          {{ scope.row.head }}
+          <img :src="getImageUrl(scope.row.picture)">
         </template>
       </el-table-column>
       <el-table-column label="性别">
@@ -50,6 +50,14 @@
       </el-table-column>
 
     </el-table>
+    <el-pagination
+      :total="total"
+      :page-size="pageSize"
+      :current-page.sync="currentPage"
+      @size-change="handleSizeChange"
+      layout="total, sizes, prev, pager, next, jumper"
+      @current-change="handleCurrentChange"
+    ></el-pagination>
   </div>
 </template>
 
@@ -69,6 +77,9 @@ export default {
   },
   data() {
     return {
+      total: 0,
+      pageSize: 4,
+      currentPage: 1,
       list: null,
       listLoading: true
     }
@@ -77,12 +88,29 @@ export default {
     this.fetchData()
   },
   methods: {
+    handleSizeChange(val) {
+      this.pageSize = val
+      this.fetchData()
+    },
+    handleCurrentChange(val) {
+      this.currentPage = val
+      this.fetchData()
+    },
     fetchData() {
       this.listLoading = true
       getList().then(response => {
         this.list = response.data.items
         this.listLoading = false
       })
+    },
+    getImageUrl(picture) {
+      const bytes = atob(picture)
+      const array = new Uint8Array(bytes.length)
+      for (let i = 0; i < bytes.length; i++) {
+        array[i] = bytes.charCodeAt(i)
+      }
+      const blob = new Blob([array], { type: 'image/*' })
+      return URL.createObjectURL(blob)
     }
   }
 }
