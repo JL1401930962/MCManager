@@ -21,11 +21,11 @@
     </sql>
 
 
-    <select id="getAllPost" resultType="com.example.mcmanager.entity.Post">
+    <select id="getAllPost" resultType="com.example.mcmanager.entity.Post" resultMap="BaseResultMap">
         select * from post
     </select>
 
-    <select id="getAllPostById" resultType="com.example.mcmanager.entity.Post">
+    <select id="getAllPostById" resultType="com.example.mcmanager.entity.Post" resultMap="BaseResultMap">
         select * from post where userid=#{userid}
     </select>
 

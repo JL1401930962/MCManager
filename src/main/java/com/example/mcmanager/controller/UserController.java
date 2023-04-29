@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
@@ -46,4 +46,21 @@ public class UserController {
         return userService.getUserById(userid);
     }
 
+    //根据id删除用户
+    @PostMapping("/deleteUserById")
+    public boolean deleteUserById(@Param("userid") Integer userid){
+        return userService.deleteUserById(userid);
+    }
+
+    //添加用户
+    @PostMapping("/addUser")
+    public boolean addUser(@RequestBody User user){
+        return userService.addUser(user);
+    }
+
+    //修改用户
+    @PostMapping("/updateUser")
+    public boolean updateUser(@RequestBody User user){
+        return userService.updateUser(user);
+    }
 }

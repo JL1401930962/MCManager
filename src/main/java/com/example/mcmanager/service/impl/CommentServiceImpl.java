@@ -24,13 +24,13 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment>
 
     // 添加评论
     @Override
-    public int addComment(Comment comment) {
+    public boolean addComment(Comment comment) {
         return commentMapper.addComment(comment);
     }
 
     // 删除评论
     @Override
-    public int deleteComment(Integer comment_id) {
+    public boolean deleteComment(Integer comment_id) {
         return commentMapper.deleteComment(comment_id);
     }
 }

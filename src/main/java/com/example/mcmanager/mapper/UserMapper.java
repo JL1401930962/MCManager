@@ -13,4 +13,11 @@ public interface UserMapper extends BaseMapper<User> {
     //根据id查询用户
     User getUserById(Integer userid);
 
+    //根据id删除用户
+    boolean deleteUserById(Integer userid);
+
+    //添加用户
+    boolean addUser(User user);
+
+    boolean updateUser(User user);
 }

@@ -10,8 +10,8 @@ public interface CommentService extends IService<Comment> {
      List<Comment> getCommentsByPostId(Integer post_id);
 
     // 添加评论
-     int addComment(Comment comment);
+     boolean addComment(Comment comment);
 
     // 删除评论
-     int deleteComment(Integer comment_id);
+    boolean deleteComment(Integer comment_id);
 }

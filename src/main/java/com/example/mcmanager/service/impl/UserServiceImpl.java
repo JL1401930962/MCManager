@@ -30,5 +30,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         return userMapper.getUserById(userid);
     }
 
+    //根据id删除用户
+    @Override
+    public boolean deleteUserById(Integer userid) {
+        return userMapper.deleteUserById(userid);
+    }
 
+    //添加用户
+    @Override
+    public boolean addUser(User user) {
+        return userMapper.addUser(user);
+    }
+
+    //修改用户
+    @Override
+    public boolean updateUser(User user) {
+        return userMapper.updateUser(user);
+    }
 }

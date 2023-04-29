@@ -3,11 +3,11 @@ const Mock = require('mockjs')
 const data = Mock.mock({
   'items|30': [{
     post_id: '@id',
-    userid: '@id',
+    userid: '@integer(0, 1000)',
     username: 'name',
     content: '@sentence(10, 20)',
     picture: 'data:image/.;base64',
-    songid: '@id',
+    songid: '@integer(0, 1000)',
     like_num: '@integer(0, 5000)',
     comment_num: '@integer(0, 5000)',
     post_time: '@datetime'

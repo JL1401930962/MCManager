@@ -13,11 +13,33 @@
 
     </resultMap>
     <sql id="Base_Column_List">
-        comment_id, post_id, userid, username, content, date, picture
+        comment_id, post_id, userid, username, content, date
     </sql>
 
-    <select id="getCommentsByPostId" resultType="com.example.mcmanager.entity.Comment">
+    <select id="getCommentsByPostId" resultType="com.example.mcmanager.entity.Comment" resultMap="BaseResultMap">
         select * from comment where post_id=#{post_id}
     </select>
+
+    <insert id="addComment" parameterType="com.example.mcmanager.entity.Comment">
+        insert into comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="post_id != null">post_id,</if>
+            <if test="userid != null">userid,</if>
+            <if test="username != null">username,</if>
+            <if test="content != null">content,</if>
+            <if test="date != null">date,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="post_id != null">#{post_id},</if>
+            <if test="userid != null">#{userid},</if>
+            <if test="username != null">#{username},</if>
+            <if test="content != null">#{content},</if>
+            <if test="date != null">#{date},</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteComment" parameterType="com.example.mcmanager.entity.Comment">
+        delete from comment where comment_id=#{comment_id}
+    </delete>
 
 </mapper>

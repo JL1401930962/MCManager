@@ -25,4 +25,40 @@
         select * from user where userid=#{userid}
     </select>
 
+    <insert id="addUser" parameterType="com.example.mcmanager.entity.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userid != null">userid,</if>
+            <if test="username != null">username,</if>
+            <if test="password != null">password,</if>
+            <if test="signature != null">signature,</if>
+            <if test="head != null">signature,</if>
+            <if test="sex != null">sex,</if>
+            <if test="age != null">age,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userid != null">#{userid},</if>
+            <if test="username != null">#{username},</if>
+            <if test="password != null">#{password},</if>
+            <if test="signature != null">#{signature},</if>
+            <if test="head != null">#{head},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="age != null">#{age},</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteUser" parameterType="com.example.mcmanager.entity.User">
+        delete from user where userid=#{userid}
+    </delete>
+
+    <update id="updateUser" parameterType="com.example.mcmanager.entity.User">
+        update user set
+        <if test="username != null">username=#{username},</if>
+        <if test="password != null">password=#{password},</if>
+        <if test="signature != null">signature=#{signature},</if>
+        <if test="head != null">signature,</if>
+        <if test="sex != null">sex,</if>
+        <if test="age != null">age,</if>
+        where userid=#{userid}
+    </update>
 </mapper>

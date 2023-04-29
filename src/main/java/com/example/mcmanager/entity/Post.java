@@ -1,22 +1,24 @@
 package com.example.mcmanager.entity;
 
+import cn.hutool.core.date.DateTime;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 @TableName(value = "post")
 @Data
 public class Post {
-    private User user;
-
     @TableId(type = IdType.AUTO)
     private Integer post_id;
     private String userid;
     private String username;
     private String head;
-    private String post_time;
+    private Date post_time;
     private String content;
     private String picture;
     private Integer songid;
@@ -26,13 +28,6 @@ public class Post {
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Integer getPost_id() {
         return post_id;
@@ -66,13 +61,13 @@ public class Post {
         this.head = head;
     }
 
-    public String getPost_time() {
-        return post_time;
-    }
-
-    public void setPost_time(String post_time) {
-        this.post_time = post_time;
-    }
+//    public String getPost_time() {
+//        return post_time;
+//    }
+//
+//    public void setPost_time(String post_time) {
+//        this.post_time = post_time;
+//    }
 
     public String getContent() {
         return content;

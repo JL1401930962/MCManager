@@ -21,7 +21,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/comment")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class CommentController {
     @Autowired
     private PostService postService;
@@ -73,9 +73,7 @@ public class CommentController {
         map1.put("post_id",comment.getPost_id());
         map1.put("userid",comment.getUserid());
         map1.put("username",comment.getUsername());
-        map1.put("head",comment.getUser().getHead());
         map1.put("content",comment.getContent());
-        map1.put("picture",comment.getPicture());
 
         return map1;
     }
@@ -93,17 +91,7 @@ public class CommentController {
      */
     @PostMapping("add")
     public boolean addComment(@RequestBody Comment comment){
-        return commentService.save(comment);
-    }
-
-    /**
-     * 后台管理接口：更新评论
-     * @param comment
-     * @return
-     */
-    @PostMapping("update")
-    public boolean updateComment(@RequestBody Comment comment){
-        return commentService.updateById(comment);
+        return commentService.addComment(comment);
     }
 
     /**
@@ -112,8 +100,8 @@ public class CommentController {
      * @return
      */
     @PostMapping("delete")
-    public boolean deleteComment(String comment_id){
-        return commentService.removeById(comment_id);
+    public boolean deleteComment(Integer comment_id){
+        return commentService.deleteComment(comment_id);
     }
 
 }

@@ -24,7 +24,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/post")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:9528")
 public class PostController {
 //    @author JL
     @Autowired
@@ -160,11 +160,13 @@ public class PostController {
 
     //查询所有帖子信息
     @GetMapping("/getAllPost")
+    @ResponseBody
     public List<Post> getAllPost(){
         return postService.getAllPost();
     }
 
     //根据userid查询所有帖子信息
+    @ResponseBody
     @GetMapping("getAllPostById")
     public List<Post> getAllPostById(@Param("userid") Integer userid){
         return postService.getAllPostById(userid);
@@ -174,7 +176,7 @@ public class PostController {
     @PostMapping("/addPost")
     public String addPost(@RequestBody Map<String,String> map){
         Post post = new Post();
-        post.setUserid(String.valueOf(Integer.parseInt(map.get("userid"))));
+        post.setUserid(map.get("userid"));
         post.setUsername(map.get("username"));
         post.setHead(map.get("head"));
         post.setContent(map.get("content"));
@@ -183,9 +185,9 @@ public class PostController {
         }else {
             post.setPicture(map.get("picture"));
         }
-        if (map.get("songid") != null){
-            post.setSongid(Integer.parseInt(map.get("songid")));
-        }
+//        if (map.get("songid") != null){
+//            post.setSongid(Integer.parseInt(map.get("songid")));
+//        }
 
         postService.addPost(post);
         postService.save(post);
