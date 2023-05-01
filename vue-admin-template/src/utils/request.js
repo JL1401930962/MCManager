@@ -1,85 +1,82 @@
-import axios from 'axios'
-import { MessageBox, Message } from 'element-ui'
-import store from '@/store'
-import { getToken } from '@/utils/auth'
+import axios from "axios";
+// axios.defaults.baseURL =
+//   "https://www.fastmock.site/mock/c2c6dbab7918b6a0d270dfc6c4d76d11/meiyi";
+// axios.defaults.baseURL = "http://localhost:8088";
 
-// create an axios instance
-const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
-  // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 100000 // request timeout
-})
+// // 请求拦截器
+// axios.interceptors.request.use(config=>{
+//   //如果存在jwt令牌，请求携带这个jwt令牌
+//   if(window.localStorage.getItem('tokenStr')){
+//       config.headers['Authorization']=window.localStorage.getItem('tokenStr');
+//   }
+//   return config;
+// },error=>{
+//   console.log(error);
+// })
 
-// request interceptor
-service.interceptors.request.use(
-  config => {
-    // do something before request is sent
+const request = (options) => {
+  return axios.request(options).then((res) => {
+    return Promise.resolve(res.data);
+  });
+};
 
-    if (store.getters.token) {
-      // let each request carry token
-      // ['X-Token'] is a custom headers key
-      // please modify it according to the actual situation
-      config.headers['X-Token'] = getToken()
-    }
-    return config
-  },
-  error => {
-    // do something with request error
-    console.log(error) // for debug
-    return Promise.reject(error)
-  }
-)
+const post = (url, params) => {
+  const options = {
+    url: url,
+    method: "POST",
+    // timeout: 2000,
+    data: params,
+    headers: { "Content-Type": "application/json", "request-ajax": true },
+  };
+  return request(options);
+};
 
-// response interceptor
-service.interceptors.response.use(
-  /**
-   * If you want to get http information such as headers or status
-   * Please return  response => response
-  */
+const get = (url, params) => {
+  const options = {
+    url: url,
+    method: "GET",
+    // timeout: 2000,
+    params: params,
+    headers: { "request-ajax": true },
+  };
+  return request(options);
+};
 
-  /**
-   * Determine the request status by custom code
-   * Here is just an example
-   * You can also judge the status by HTTP Status Code
-   */
-  response => {
-    const res = response.data
+const del = (url, params) => {
+  const options = {
+    url: url + "/" + params,
+    method: "DELETE",
+    // timeout: 2000,
+    headers: { "request-ajax": true },
+  };
+  return request(options);
+};
 
-    // if the custom code is not 20000, it is judged as an error.
-    if (res.code !== 20000) {
-      Message({
-        message: res.message || 'Error',
-        type: 'error',
-        duration: 5 * 1000
-      })
+const del2 = (url) => {
+  const options = {
+    url: url,
+    method: "DELETE",
+    // timeout: 2000,
+    headers: { "request-ajax": true },
+  };
+  return request(options);
+};
 
-      // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-      if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
-        // to re-login
-        MessageBox.confirm('You have been logged out, you can cancel to stay on this page, or log in again', 'Confirm logout', {
-          confirmButtonText: 'Re-Login',
-          cancelButtonText: 'Cancel',
-          type: 'warning'
-        }).then(() => {
-          store.dispatch('user/resetToken').then(() => {
-            location.reload()
-          })
-        })
-      }
-      return Promise.reject(new Error(res.message || 'Error'))
-    } else {
-      return res
-    }
-  },
-  error => {
-    console.log('err' + error) // for debug
-    Message({
-      message: error.message,
-      type: 'error',
-      duration: 5 * 1000
-    })
-    return Promise.reject(error)
-  }
-)
+const put = (url, params) => {
+  const options = {
+    url: url,
+    method: "PUT",
+    // timeout: 2000,
+    params: params,
+    headers: { "request-ajax": true },
+  };
+  return request(options);
+};
 
-export default service
+export default {
+  get,
+  post,
+  del,
+  put,
+  del2
+};

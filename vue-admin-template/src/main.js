@@ -33,6 +33,8 @@ Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
 
+
+
 Vue.config.productionTip = false
 
 new Vue({
@@ -41,3 +43,7 @@ new Vue({
   store,
   render: h => h(App)
 })
+
+// 封装的请求
+import http from "./utils/request.js";
+Vue.prototype.$http =http

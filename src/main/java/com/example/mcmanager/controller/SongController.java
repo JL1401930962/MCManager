@@ -30,7 +30,7 @@ public class SongController {
      * 接口：获取信息
      * @return
      */
-    @PostMapping("list1")
+    @PostMapping("/list1")
     public List<Song> list(){
         return songService.list();
     }

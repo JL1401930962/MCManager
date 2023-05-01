@@ -63,4 +63,9 @@ public class UserController {
     public boolean updateUser(@RequestBody User user){
         return userService.updateUser(user);
     }
+
+    @GetMapping("/test")
+    public String test(){
+        return "你好";
+    }
 }
