@@ -14,4 +14,12 @@
         id, post_id, userid, like_state
     </sql>
 
+    <select id="getAllLikes" resultType="com.example.mcmanager.entity.Likes">
+        select * from likes
+    </select>
+
+    <select id="getLikesByPostId" resultType="com.example.mcmanager.entity.Likes">
+        select * from likes where post_id=#{post_id}
+    </select>
+
 </mapper>

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.mcmanager.entity.Comment;
 import com.example.mcmanager.entity.Post;
+import com.example.mcmanager.entity.Song;
 import com.example.mcmanager.service.*;
 import org.apache.commons.lang.StringUtils;
 import org.apache.ibatis.annotations.Param;
@@ -93,7 +94,7 @@ public class PostController {
     }
 
     /**
-     * 后台管理接口：新增帖子
+     * 后台管理接口：新增帖子(只有"add")
      * @param post
      * @return
      */
@@ -193,4 +194,16 @@ public class PostController {
         postService.save(post);
         return "success";
     }
+
+    @PostMapping("/list1")
+    public List<Post> list(){
+        return postService.list();
+    }
+
+    // 根据post_id获取songid
+    @GetMapping("/getSongIdByPostId")
+    public Integer getSongIdByPostId(@Param("post_id") Integer post_id){
+        return postService.getSongIdByPostId(post_id);
+    }
+
 }

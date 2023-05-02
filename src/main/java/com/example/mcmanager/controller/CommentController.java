@@ -34,8 +34,8 @@ public class CommentController {
      * @return
      */
     @PostMapping("list1")
-    public List<Post> list(){
-        return postService.list();
+    public List<Comment> list(){
+        return commentService.list();
     }
 
     /**
@@ -103,5 +103,7 @@ public class CommentController {
     public boolean deleteComment(Integer comment_id){
         return commentService.deleteComment(comment_id);
     }
+
+
 
 }

@@ -36,4 +36,9 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
         return postMapper.addPost(post);
     }
 
+    @Override
+    public Integer getSongIdByPostId(Integer post_id) {
+        return postMapper.getSongIdByPostId(post_id);
+    }
+
 }

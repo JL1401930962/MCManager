@@ -1,6 +1,7 @@
 package com.example.mcmanager.controller;
 
 import com.example.mcmanager.entity.Post;
+import com.example.mcmanager.entity.Song;
 import com.example.mcmanager.entity.User;
 import com.example.mcmanager.service.UserService;
 import org.apache.ibatis.annotations.Param;
@@ -29,7 +30,7 @@ public class UserController {
      * 接口：获取信息
      * @return
      */
-    @PostMapping("list1")
+    @PostMapping("list")
     public List<User> list(){
         return userService.list();
     }
@@ -68,4 +69,6 @@ public class UserController {
     public String test(){
         return "你好";
     }
+
+
 }

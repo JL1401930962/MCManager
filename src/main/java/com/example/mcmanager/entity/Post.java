@@ -18,7 +18,7 @@ public class Post {
     private String userid;
     private String username;
     private String head;
-    private Date post_time;
+    private String post_time;
     private String content;
     private String picture;
     private Integer songid;
@@ -61,13 +61,13 @@ public class Post {
         this.head = head;
     }
 
-//    public String getPost_time() {
-//        return post_time;
-//    }
-//
-//    public void setPost_time(String post_time) {
-//        this.post_time = post_time;
-//    }
+    public String getPost_time() {
+        return post_time;
+    }
+
+    public void setPost_time(String post_time) {
+        this.post_time = post_time;
+    }
 
     public String getContent() {
         return content;

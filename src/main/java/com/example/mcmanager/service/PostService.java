@@ -17,4 +17,5 @@ public interface PostService extends IService<Post> {
     // 添加帖子
     String addPost(Post post);
 
+    Integer getSongIdByPostId(Integer post_id);
 }

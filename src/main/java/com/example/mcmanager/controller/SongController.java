@@ -6,10 +6,7 @@ import com.example.mcmanager.service.SongService;
 import com.example.mcmanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +22,6 @@ public class SongController {
     @Autowired
     private SongService songService;
 
-
     /**
      * 接口：获取信息
      * @return
@@ -35,7 +31,38 @@ public class SongController {
         return songService.list();
     }
 
+    // 获取所有歌曲信息
+    @GetMapping("/getAllSong")
+    public List<Song> getAllSong(){
+        return songService.getAllSong();
+    }
 
+    // 修改歌曲信息
+    @PostMapping("/updateSong")
+    public boolean updateSong(@RequestBody Song song){
+        return songService.updateSong(song);
+    }
+    // 根据歌曲id修改歌曲信息
+    @PostMapping("/updateSongById")
+    public boolean updateSongById(@RequestBody Integer songid){
+        return songService.updateSongById(songid);
+    }
 
+    // 添加歌曲信息
+    @PostMapping("/addSong")
+    public boolean addSong(@RequestBody Song song){
+        return songService.save(song);
+    }
 
+    // 删除歌曲信息
+    @PostMapping("/deleteSongById")
+    public boolean deleteSongById(@RequestParam("songid") Integer songid){
+        return songService.removeById(songid);
+    }
+
+    // 根据id查询歌曲信息
+    @GetMapping("/getSongById")
+    public Song getSongById(@RequestParam("songid") Integer songid){
+        return songService.getSongById(songid);
+    }
 }
