@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cfb79d5f-4fa0-4db1-b631-a212cbe69849" name="Changes" comment="移除了vue-admin-template，替换vue_demo，现在出现数据undifined" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vue_demo" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2ONB210PL3JeDUtq0MJHjUd3i1M" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/factory/vue_demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.mocha.mocha_node_package_dir&quot;: &quot;D:/factory/MCManager/NeteaseCloudMusicApi/node_modules/mocha&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.language.Kotlin&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e4c32830a523dbd78b72f223da51568a&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\factory\\MCManager\\NeteaseCloudMusicApi\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\factory\MCManager\vue-admin-template\src\views\table" />
+      <recent name="D:\factory\MCManager\src\main\resources\mapper" />
+      <recent name="D:\factory\MCManager\vue-admin-template\src\api" />
+      <recent name="D:\factory\MCManager\vue-admin-template\mock" />
+      <recent name="D:\factory\MCManager\src\main\java\com\example\mcmanager\entity" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.mcmanager.config" />
+      <recent name="com.example.mcmanager.service.impl" />
+      <recent name="com.example.mcmanager.service" />
+      <recent name="com.example.mcmanager.mapper" />
+      <recent name="com.example.mcmanager.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.McManagerApplication">
+    <configuration name="McManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8 (5)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="MCManager" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.mcmanager.McManagerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="methods in server.js" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/NeteaseCloudMusicApi/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/NeteaseCloudMusicApi</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/NeteaseCloudMusicApi/main.test.js</test-file>
+      <test-names>
+        <name value="methods in server.js" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Mocha.methods in server.js" />
+      <item itemvalue="Spring Boot.McManagerApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Mocha.methods in server.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfb79d5f-4fa0-4db1-b631-a212cbe69849" name="Changes" comment="" />
+      <created>1681390949079</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681390949079</updated>
+      <workItem from="1681390951437" duration="835000" />
+      <workItem from="1681392170603" duration="9808000" />
+      <workItem from="1681491431933" duration="1693000" />
+      <workItem from="1681544546187" duration="955000" />
+      <workItem from="1681545674742" duration="8000" />
+      <workItem from="1681545739475" duration="8412000" />
+      <workItem from="1681566877520" duration="973000" />
+      <workItem from="1681581404461" duration="4509000" />
+      <workItem from="1681587959014" duration="31000" />
+      <workItem from="1681635384043" duration="5553000" />
+      <workItem from="1681671059150" duration="1620000" />
+      <workItem from="1682086183092" duration="1709000" />
+      <workItem from="1682245501583" duration="10754000" />
+      <workItem from="1682277391244" duration="3667000" />
+      <workItem from="1682325419702" duration="1690000" />
+      <workItem from="1682328222112" duration="7258000" />
+      <workItem from="1682577318445" duration="2323000" />
+      <workItem from="1682608744691" duration="8989000" />
+      <workItem from="1682632896133" duration="1036000" />
+      <workItem from="1682677044437" duration="8105000" />
+      <workItem from="1682710343762" duration="10408000" />
+      <workItem from="1682724965359" duration="989000" />
+      <workItem from="1682770163951" duration="4126000" />
+      <workItem from="1682870262457" duration="2818000" />
+      <workItem from="1682933114195" duration="1755000" />
+      <workItem from="1682941426141" duration="4096000" />
+      <workItem from="1682957112596" duration="6792000" />
+      <workItem from="1683033087681" duration="967000" />
+      <workItem from="1683055459152" duration="4404000" />
+      <workItem from="1683229069554" duration="4050000" />
+      <workItem from="1683287006250" duration="4669000" />
+      <workItem from="1683299917456" duration="8201000" />
+    </task>
+    <task id="LOCAL-00001" summary="补充文件">
+      <created>1682337827244</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682337827244</updated>
+    </task>
+    <task id="LOCAL-00002" summary="前端页面接数据失败；新增addPost接口、getCommentsByPostId接口">
+      <created>1682690623634</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682690623634</updated>
+    </task>
+    <task id="LOCAL-00003" summary="删除Kotlin依赖（持续报错而无用）">
+      <created>1682690676026</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682690676026</updated>
+    </task>
+    <task id="LOCAL-00004" summary="新增config/WebConfig.java，新增增删改用户等Controller实现">
+      <created>1682774107695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682774107695</updated>
+    </task>
+    <task id="LOCAL-00005" summary="后端整体框架初步实现">
+      <created>1683059226260</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683059226260</updated>
+    </task>
+    <task id="LOCAL-00006" summary="移除了vue-admin-template，替换vue_demo，现在出现数据undifined">
+      <created>1683316127656</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683316127656</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/vue-element-admin" />
+      <path value="$PROJECT_DIR$/vue-admin-template" />
+      <path value="$PROJECT_DIR$/NeteaseCloudMusicApi" />
+    </ignored-roots>
+    <MESSAGE value="NeteaseCloudMusicApi和vue-admin-template" />
+    <MESSAGE value="补充文件" />
+    <MESSAGE value="前端页面接数据失败；新增addPost接口、getCommentsByPostId接口" />
+    <MESSAGE value="删除Kotlin依赖（持续报错而无用）" />
+    <MESSAGE value="新增config/WebConfig.java，新增增删改用户等Controller实现" />
+    <MESSAGE value="后端整体框架初步实现" />
+    <MESSAGE value="移除了vue-admin-template，替换vue_demo，现在出现数据undifined" />
+    <option name="LAST_COMMIT_MESSAGE" value="移除了vue-admin-template，替换vue_demo，现在出现数据undifined" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
