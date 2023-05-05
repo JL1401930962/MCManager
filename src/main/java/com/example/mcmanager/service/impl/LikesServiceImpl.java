@@ -28,4 +28,14 @@ public class LikesServiceImpl extends ServiceImpl<LikesMapper, Likes>
     public List<Likes> getLikesByPostId(Integer post_id) {
         return likesMapper.getLikesByPostId(post_id);
     }
+
+    @Override
+    public boolean getLikeStateByPostIdAndUserId(Integer post_id, Integer user_id) {
+        return likesMapper.getLikeStateByPostIdAndUserId(post_id, user_id);
+    }
+
+    @Override
+    public boolean updateLikeState(Integer post_id, Integer user_id, boolean like_state) {
+        return likesMapper.updateLikeState(post_id, user_id, like_state);
+    }
 }

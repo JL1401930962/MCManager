@@ -24,5 +24,16 @@ public class LikesController {
         return likesService.getLikesByPostId(post_id);
     }
 
+    // 根据post_id和user_id获取点赞状态
+    @GetMapping("/getLikeStateByPostIdAndUserId")
+    public boolean getLikeStateByPostIdAndUserId(Integer post_id, Integer user_id){
+        return likesService.getLikeStateByPostIdAndUserId(post_id, user_id);
+    }
+
+    // 更新点赞状态
+    @GetMapping("/updateLikeState")
+    public boolean updateLikeState(Integer post_id, Integer user_id, boolean like_state){
+        return likesService.updateLikeState(post_id, user_id, like_state);
+    }
 
 }

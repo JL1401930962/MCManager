@@ -15,4 +15,5 @@ public interface CommentMapper extends BaseMapper<Comment> {
 
     // 删除评论
     boolean deleteComment(Integer comment_id);
+
 }

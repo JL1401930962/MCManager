@@ -20,4 +20,6 @@ public interface UserMapper extends BaseMapper<User> {
     boolean addUser(User user);
 
     boolean updateUser(User user);
+
+    boolean updateUserById(User user);
 }

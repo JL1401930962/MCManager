@@ -33,4 +33,5 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment>
     public boolean deleteComment(Integer comment_id) {
         return commentMapper.deleteComment(comment_id);
     }
+
 }

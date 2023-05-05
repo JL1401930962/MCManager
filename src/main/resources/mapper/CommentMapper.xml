@@ -16,7 +16,7 @@
         comment_id, post_id, userid, username, content, date
     </sql>
 
-    <select id="getCommentsByPostId" resultType="com.example.mcmanager.entity.Comment" resultMap="BaseResultMap">
+    <select id="getCommentByPostId" resultType="com.example.mcmanager.entity.Comment" resultMap="BaseResultMap">
         select * from comment where post_id=#{post_id}
     </select>
 

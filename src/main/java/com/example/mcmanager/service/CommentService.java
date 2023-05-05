@@ -14,4 +14,5 @@ public interface CommentService extends IService<Comment> {
 
     // 删除评论
     boolean deleteComment(Integer comment_id);
+
 }

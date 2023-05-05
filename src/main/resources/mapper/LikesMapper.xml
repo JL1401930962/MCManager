@@ -22,4 +22,11 @@
         select * from likes where post_id=#{post_id}
     </select>
 
+    <select id="getLikeStateByPostIdAndUserId" resultType="com.example.mcmanager.entity.Likes">
+        select like_state from likes where post_id=#{post_id} and userid=#{userid}
+    </select>
+
+    <update id="updateLikeStateByPostIdAndUserId" parameterType="com.example.mcmanager.entity.Likes">
+        update likes set like_state=#{like_state} where post_id=#{post_id} and userid=#{userid}
+    </update>
 </mapper>

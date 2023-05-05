@@ -12,12 +12,12 @@ public class User {
     private String username;    //用户名
 
     @TableId(type = IdType.AUTO)
-    private String userid;  //用户id
+    private Integer userid;  //用户id
     private String head;    //头像
     private String password;    //密码
     private String signature;   //个性签名
-    private int age;    //年龄
-    private int sex;    //0:男 1:女
+    private Integer age;    //年龄
+    private Integer sex;    //0:男 1:女
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -30,11 +30,11 @@ public class User {
         this.username = username;
     }
 
-    public String getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(String userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
@@ -62,19 +62,19 @@ public class User {
         this.signature = signature;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public int getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 }

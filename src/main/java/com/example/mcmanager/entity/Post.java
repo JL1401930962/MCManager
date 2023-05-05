@@ -25,9 +25,6 @@ public class Post {
     private Integer comment_num;
     private Integer like_num;
 
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
-
 
     public Integer getPost_id() {
         return post_id;
@@ -108,5 +105,9 @@ public class Post {
     public void setLike_num(Integer like_num) {
         this.like_num = like_num;
     }
+
+    @TableField(exist = false)
+    private static final long serialVersionUID = 1L;
+
 
 }

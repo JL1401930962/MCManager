@@ -70,5 +70,9 @@ public class UserController {
         return "你好";
     }
 
-
+    // 根据userid修改用户
+    @PostMapping("/updateUserById")
+    public boolean updateUserById(@RequestBody User user){
+        return userService.updateUserById(user);
+    }
 }

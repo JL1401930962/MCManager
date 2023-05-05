@@ -49,49 +49,48 @@ public class PostController {
     @Value("${file.upload.relative}")
     private String fileRelativePath;
 
-    /**
-     * 后台管理接口：获取后台管理的帖子列表、可以分页、可以根据关键词搜索
-     * @param pageIndex
-     * @param pageSize
-     * @param username
-     * @param post_id
-     * @return
-     */
-    @GetMapping("list")
-    public Page<Post> listByPagination(Integer pageIndex, Integer pageSize, String username, String post_id){
-        Page<Post> pageInfo = new Page<>(pageIndex,pageSize);
-        LambdaQueryWrapper<Post> qw = new LambdaQueryWrapper<>();
-        qw.like(StringUtils.isNotEmpty(username),Post::getUsername,username);
-        qw.like(StringUtils.isNotEmpty(post_id),Post::getPost_id,post_id);
-        postService.page(pageInfo,qw);
-        return pageInfo;
-    }
+//    /**
+//     * 后台管理接口：获取后台管理的帖子列表、可以分页、可以根据关键词搜索
+//     * @param pageIndex
+//     * @param pageSize
+//     * @param post_id
+//     * @return
+//     */
+//    @GetMapping("/list")
+//    public Page<Post> listByPagination(Integer pageIndex, Integer pageSize, String username, String post_id){
+//        Page<Post> pageInfo = new Page<>(pageIndex,pageSize);
+//        LambdaQueryWrapper<Post> qw = new LambdaQueryWrapper<>();
+////        qw.like(StringUtils.isNotEmpty(username),Post::getUsername,username);
+//        qw.like(StringUtils.isNotEmpty(post_id),Post::getPost_id,post_id);
+//        postService.page(pageInfo,qw);
+//        return pageInfo;
+//    }
 
-    @PostMapping("postInfo")
-    public Map postInfo(@RequestBody Map<String,String> map) throws SQLException {
-        //TOdo
-        Integer userId = 5;
-        System.out.println(map);
-        String post_id = map.get("post_id");
-        Post post = postService.getById(post_id);
-        QueryWrapper<Post> qw = new QueryWrapper<>();
-        qw.eq("post_id",post_id).eq("user_id",userId);
-        List<Post> list = postService.list(qw);
-        HashMap<String, Object> map1 = new HashMap<>();
-        map1.put("postMenu",list);
-        map1.put("post_id",post.getPost_id());
-        map1.put("userid",post.getUserid());
-        map1.put("username",post.getUsername());
-        map1.put("head",post.getHead());
-        map1.put("post_time",post.getPost_time());
-        map1.put("content",post.getContent());
-        map1.put("picture",post.getPicture());
-        map1.put("songid",post.getSongid());
-        map1.put("comment_num",post.getComment_num());
-        map1.put("like_num",post.getLike_num());
-
-        return map1;
-    }
+//    @PostMapping("/postInfo")
+//    public Map postInfo(@RequestBody Map<String,String> map) throws SQLException {
+//        //TOdo
+//        Integer userId = 5;
+//        System.out.println(map);
+//        String post_id = map.get("post_id");
+//        Post post = postService.getById(post_id);
+//        QueryWrapper<Post> qw = new QueryWrapper<>();
+//        qw.eq("post_id",post_id).eq("user_id",userId);
+//        List<Post> list = postService.list(qw);
+//        HashMap<String, Object> map1 = new HashMap<>();
+//        map1.put("postMenu",list);
+//        map1.put("post_id",post.getPost_id());
+//        map1.put("userid",post.getUserid());
+//        map1.put("username",post.getUsername());
+//        map1.put("head",post.getHead());
+//        map1.put("post_time",post.getPost_time());
+//        map1.put("content",post.getContent());
+//        map1.put("picture",post.getPicture());
+//        map1.put("songid",post.getSongid());
+//        map1.put("comment_num",post.getComment_num());
+//        map1.put("like_num",post.getLike_num());
+//
+//        return map1;
+//    }
 
     /**
      * 后台管理接口：新增帖子(只有"add")
@@ -161,7 +160,6 @@ public class PostController {
 
     //查询所有帖子信息
     @GetMapping("/getAllPost")
-    @ResponseBody
     public List<Post> getAllPost(){
         return postService.getAllPost();
     }
@@ -196,6 +194,7 @@ public class PostController {
     }
 
     @PostMapping("/list1")
+    @ResponseBody
     public List<Post> list(){
         return postService.list();
     }
